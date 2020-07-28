@@ -1,3 +1,14 @@
 body {
-    margin: 0 auto;
+    margin: 0; /* remove default margins */
+}
+
+.container {
+    margin: 0 auto; /* center all containers */
+    width: 80%; /* responsive width of containers: % is wrt parent's width*/
+    max-width: 720px; /* do not go above certain pixels wide */
+    padding: 1em; /* relative to font-size of container */
+}
+
+img {
+    width: 100%; /* to contain the image within its parent instead of original size */
 }
