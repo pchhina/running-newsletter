@@ -1,3 +1,5 @@
+/* Layout */
+
 body {
     margin: 0; /* remove default margins */
 }
@@ -5,10 +7,55 @@ body {
 .container {
     margin: 0 auto; /* center all containers */
     width: 80%; /* responsive width of containers: % is wrt parent's width*/
-    max-width: 720px; /* do not go above certain pixels wide */
+    max-width: 800px; /* do not go above certain pixels wide */
     padding: 1em; /* relative to font-size of container */
 }
 
 img {
     width: 100%; /* to contain the image within its parent instead of original size */
 }
+
+.columns {
+    display: flex; /* flex container for main and aside */
+    justify-content: space-between; /* additional white space is evenly distributed 'between' the columns */
+    align-items: flex-start; /* each items height is independently controlled to fit the size of its content */
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0; /* to control the space around text elements just with padding of containers */
+}
+
+.col-2 {
+    width: 50%; /* main section width = 2/3 of total */
+}
+
+.col-1 {
+    width: 25%; /* asides width = 1/3 of total */
+}
+
+.col {
+    padding: 1em;
+}
+
+/* Colors */
+
+.col-bg {
+    background-color: #05a6c7;
+    color: #fff;
+}
+
+/* media query for smaller screen */
+@media (max-width: 600px) {
+    .columns {
+        flex-direction: column; /* switch flex direction's main axis */
+    }
+    .col-2,
+    .col-1 {
+        width: 100%; /* stretch columns all the way across smaller screen */
+    }
+}
+
