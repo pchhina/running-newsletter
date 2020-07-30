@@ -2,13 +2,20 @@
 
 body {
     margin: 0; /* remove default margins */
+    font-family: 'Ubuntu', sans-serif;
 }
 
+/* general container */
 .container {
     margin: 0 auto; /* center all containers */
     width: 80%; /* responsive width of containers: % is wrt parent's width*/
     max-width: 800px; /* do not go above certain pixels wide */
-    padding: 1em; /* relative to font-size of container */
+}
+
+/* layout of h1 and navbar using flex */
+.container-nav {
+    display: flex;
+    justify-content: space-between;
 }
 
 img {
@@ -41,11 +48,66 @@ p {
     padding: 1em;
 }
 
-/* Colors */
+/* Typography */
+header {
+    background: #f8f8f8;
+    padding: 2em;
+}
 
-.col-bg {
+.col-1 {
     background-color: #05a6c7;
     color: #fff;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774;
+    font-size: 2rem;
+    margin: 0; /* to stack the subtitle close to h1 */
+}
+
+.subtitle {
+    font-weight: 700;
+    color: #1792d2;
+    font-size: .75rem;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none; /* remove dots from links inside ul */
+    display: flex; /* since li is block level element inside ul, setting ul display to flex for horizontal layout */
+    padding: 0; /* remove default padding of ul */
+    justify-content: center; /* equal spacing between first element and left side of ul; last element and right side of ul */
+}
+
+nav li {
+    margin-left: 2em; /* space out links but stack the rightmost link to the right border*/
+}
+
+nav a {
+    text-decoration: none; /* remove underline from links */
+    color: #707070;
+    font-weight: 700;
+
+}
+
+/* hover affects mouse movement and focus affects keyboard tabbing */
+nav a:hover,
+nav a:focus {
+    color: #1792d2;
+    border-bottom: 2px solid #1792d2;
+
+}
+
+/* Navigation aside */
+aside ul {
+    list-style: none; /* remove dots from aside links */
+    padding: 0;
+}
+
+aside a{
+    text-decoration: none; /* remove underline from links */
 }
 
 /* media query for smaller screen */
