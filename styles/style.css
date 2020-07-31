@@ -110,8 +110,12 @@ aside a{
     text-decoration: none; /* remove underline from links */
 }
 
-/* media query for smaller screen */
-@media (max-width: 600px) {
+/* -------------------------------  */
+/* media queries for smaller screen */
+/* -------------------------------  */
+
+/* from 2-column to 1-column layout */
+@media (max-width: 675px) {
     .columns {
         flex-direction: column; /* switch flex direction's main axis */
     }
@@ -121,3 +125,15 @@ aside a{
     }
 }
 
+/* for navbar */
+@media (max-width: 675px) {
+    .container-nav,
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 0.5em 0;
+    }
+}
