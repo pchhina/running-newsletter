@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>simply run</title>
+        <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scaling=1">
+    </head>
+    <body>
+        <header>
+            <div class="container container-nav">
+                <div class="site-title">
+                    <h1>Earth & Sole</h1>
+                    <p class="subtitle">news for folks who love runnning</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="log.html">Log</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- container -->
+        </header>
+        <div class="container log-input">
+            <form id="log-input">
+                <!-- name is the variable name passed to the server -->
+                <!-- input and label are connected to each other with id and for attributes respectively-->
+                <label for="dist">Distance (miles)</label>
+                <input type="text" name="dist" class="dist" id="dist">
+                <label for="time">Time (minutes)</label>
+                <input type="text" name="time" class="time" id="time">
+                <input type="submit" value="Log" class="log" id="log">
+            </form>
+        </div>
+        <div class="container log-table">
+            <table id="log-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Distance</th>
+                    <th>Time</th>
+                    <th>Pace (min/mile)</th>
+                </tr>
+            </table>
+        </div>
+    <footer class="container">
+        <h6>Page 1</h4>
+    </footer>
+    <script src="index.js"></script>
+    </body>
+</html>

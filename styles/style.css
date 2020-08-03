@@ -5,6 +5,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+img {
+    width: 100%; /* to contain the image within its parent instead of original size */
+    height: 300px;
+    object-fit: cover; /* do not stretch or squeeze the image when height is constrained */
+}
+
 /* general container */
 .container {
     margin: 0 auto; /* center all containers */
@@ -16,10 +22,6 @@ body {
 .container-nav {
     display: flex;
     justify-content: space-between;
-}
-
-img {
-    width: 100%; /* to contain the image within its parent instead of original size */
 }
 
 .columns {
@@ -37,7 +39,7 @@ p {
 }
 
 .col-2 {
-    width: 50%; /* main section width = 2/3 of total */
+    width: 60%; /* main section width = 2/3 of total */
 }
 
 .col-1 {
@@ -119,9 +121,16 @@ aside a{
     .columns {
         flex-direction: column; /* switch flex direction's main axis */
     }
-    .col-2,
-    .col-1 {
+    .col-2 {
         width: 100%; /* stretch columns all the way across smaller screen */
+    }
+
+    .col-1 {
+        width: 90%; /* smaller than 100% so that background color does not hit the right border */
+    }
+
+    img {
+        height: initial;
     }
 }
 
