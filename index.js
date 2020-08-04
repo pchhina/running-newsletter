@@ -3,6 +3,8 @@ const tableRef = document.getElementById("log-table")
 const distance = document.getElementById("dist");
 const time = document.getElementById("time");
 
+let i = 0;
+
 let log = localStorage.log;
 // initialize log in localStorage if it doesn't exist
 if (!log){
@@ -35,6 +37,8 @@ function addEntryToDOM(event) {
     // insert date
     const cellDate = newRow.insertCell(0);
     let today = new Date();
+    i += 1;
+    today.setDate(today.getDate() + i);
     today = today.toLocaleDateString("en-US");
     const dateText = document.createTextNode(today);
     cellDate.appendChild(dateText);
@@ -53,5 +57,8 @@ function addEntryToDOM(event) {
     cellPace.appendChild(paceText);
     log.push({today: today, distance: distance.value, time: time.value, pace: pace});
     localStorage.log = JSON.stringify(log);
+    // clear out input fields
+    distance.value = "";
+    time.value = "";
 
 }
